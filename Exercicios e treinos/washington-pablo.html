@@ -1,0 +1,23 @@
+<html>
+<head>
+    <script type='text/javascript'>
+        function num_perfeito(valor) {
+            var total = 0;
+            alert(Math.round(valor/2));
+            for (var i = 1; i < (Math.round(valor  / 2) + 1); i++) {
+                if (valor % i == 0) {
+                    total += i;
+                }
+            }
+            if (total == valor){
+                console.log('O número ', total, ' é perfeito');
+            } else {
+                console.log('O número ', valor, ' NÃO é perfeito');
+            }
+        }
+    </script>
+</head>
+<body>
+    <input text="text" id ="num" onkeyup="num_perfeito(this.value);">
+</body>
+</html>
