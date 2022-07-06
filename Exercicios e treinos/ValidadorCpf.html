@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Validade de CPF</title>
+      <script type="text/javascript">
+        function mascara_cpf(){
+            var cpf = document.getElementById('cpf')
+                if(cpf.value.length == 3 || cpf.value.length == 7) cpf.value += "." ;
+                else if(cpf.value.length == 11) cpf.value += "-" ;
+        }
+        
+        function testaCPF(cpf) {
+            var Soma = 0;
+            var Resto;
+
+            cpf = cpf.replace(/[^0-9]/g,'');
+           
+
+            for (i=1; i<=9; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (11 - i);
+            Resto = (Soma * 10) % 11;
+
+            if ((Resto == 10) || (Resto == 11))  Resto = 0;
+            if (Resto != parseInt(cpf.substring(9, 10)) ) return false;
+        
+            Soma = 0;
+            for (i = 1; i <= 10; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (12 - i);
+            Resto = (Soma * 10) % 11;
+
+            
+        
+            if ((Resto == 10) || (Resto == 11))  Resto = 0;
+            if (Resto != parseInt(cpf.substring(10, 11) ) ) return false;
+            return true
+
+            
+          }    
+        </script>
+  </head>
+
+  <body>
+    <label>CPF:</label>
+    <input type="text" id="cpf" onkeyup="mascara_cpf()" autocomplete="off" maxlength="14">
+    <button onclick = "alert(testaCPF(cpf.value))">Enviar</button>
+  </body>
+
+</html>
+
