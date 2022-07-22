@@ -1,0 +1,38 @@
+<html>
+	<title> WEB1 200722 </title>
+	<h1 id= "sem id" onmouseover = "Mudar ()"; onmouseout = "Voltar ()" style = "background-color:red;" > a </h1>
+	<body>
+	
+<body/>
+
+	<img src= "a.jpg" id="h1" onmouseover = "Mudar ()"; onmouseout = "Voltar ()">
+
+	<script>
+		alert ("Coloque o mouse sobre mim")
+		console.log ("a")
+		var cookies = navigator.cookieEnabled;
+		function Mudar () {
+			document.getElementById("h1").style.backgroundColor = "black";
+			document.getElementById("h1").style.color = "white";
+			if( cookies == 0){
+				alert ("Cookies NAO estao habilitados")
+			}
+			if( cookies == 1){
+				alert ("Cookies estao habilitados")
+			}
+				
+		}
+		function Voltar (){
+			alert ("Coloque o mouse sobre mim")
+			document.getElementById("h1").style.backgroundColor = "White";
+			document.getElementById("h1").style.color = "black";
+			console.log ("a")
+		}
+		
+		
+	</script>
+
+
+
+
+</html>
